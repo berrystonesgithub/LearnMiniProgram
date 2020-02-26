@@ -1,0 +1,109 @@
+
+<!--pages/wxml/wxml.wxml-->
+<!-- 1.wxml的格式 -->
+<!-- <view></view>
+<button></button>
+<image/>
+<input/>
+ -->
+
+<!-- 2.mustache -->
+<view>你好小程序</view>
+<view>{{message}}</view>
+<view>{{firstname}} {{lastname}}</view>
+<view>{{firstname + ' ' + lastname}}</view>
+<view>{{age>=18 ? '成年人' : '未成年人'}}</view>
+
+<view>{{nowTime}}</view>
+
+<button size="mini" bindtap="handleColor">切换颜色</button>
+<view class="box {{isActive ? 'active':' '}}">哈哈哈</view>
+
+<!-- 3.条件判断 -->
+<view>----------条件判断-------------</view>
+<!-- wx:if -->
+<button bindtap="handleSwitchShow" size="mini">切换显示</button>
+<view wx:if="{{isShow}}">哈哈哈</view>
+
+<!-- wx:elseif -->
+<button size="mini" bindtap="handleIncrement">分数+6</button>
+<view>分数{{score}}</view>
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else>不及格</view>
+
+<!-- hidden属性 -->
+<view wx:if="{{false}}">--------hidden------------</view>
+<view hidden>--------hidden------------</view>
+
+<!-- 两者在隐藏时候的区别 -->
+<view>-----------------------------------------------------</view>
+<view wx:if="{{true}}">--------wx:if hidden------------</view>
+<view hidden="{{false}}">--------hidden hidden------------</view>
+<view wx:if="{{false}}">--------wx:if hidden------------</view>
+<view hidden="{{true}}">--------hidden hidden------------</view>
+<!-- 
+  hidden将一个组件隐藏起来时,该组件依然是存在的,将display设置为none
+  wx:if将一个组件隐藏起来时,该组件直接不存在,没有创建 
+  频率低: wx:if
+  频率高: hidden
+-->
+
+<!-- wx:for -->
+<view>----------列表渲染-------</view>
+<!-- 1.wx:for的回顾 -->
+<!-- 1.1.遍历数组/字符串/数字 -->
+<!-- <view wx:for="{{['abc','cba','nba']}}">{{item}}{{index}}</view>
+<view wx:for='berrystone'>{{item}}{{index}}</view>
+<view wx:for='{{9}}'>{{item}}</view>
+ -->
+
+<!-- block -->
+<!-- <block wx:if="{{isShow}}">
+<button>按钮</button>
+<view>哈哈哈</view>
+<view>嘻嘻嘻</view>
+</block> -->
+
+<!-- 3.item,index起名字 -->
+<!-- <view wx:for="{{movies}}" wx:for-item="movie" wx:for-index="i">{{movie + i}}</view>
+
+<block wx:for="{{nums}}">
+  <block wx:for="{{item}}" wx:for-item="innerNums">
+    <view>{{innerNums}}</view>
+  </block>
+</block> -->
+
+<!-- 4.key的作用 -->
+<!-- <view class="container">
+  <view wx:for="{{letters}}">{{item}}</view>
+</view> -->
+
+<view>----------------- template -------------------------</view>
+<!-- 5.模板用法 -->
+<!-- 
+  以前的时候不支持自定义组件,为了进行代码复用:template
+   模板包裹的内容在没有被使用前，是不会进行任何渲染的
+ -->
+<!-- <template name="containItem">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+
+<import src="/wxml/template.wxml"/>
+<import src="/wxml/abc.wxml"/>
+
+<!-- <include src="/wxml/template.wxml"/> -->
+
+<template is="containItem" data="{{btnText:'按钮',content:'哈哈哈'}}"/>
+<template is="containItem" data="{{btnText:'警告',content:'哈哈哈1'}}"/>
+<template is="containItem" data="{{btnText:'点击',content:'哈哈哈2'}}"/>
+<template is="containItem" data="{{btnText:'登录',content:'哈哈哈3'}}"/>
+<template is="containItem" data="{{btnText:'发送',content:'哈哈哈4'}}"/>
+<template is="containItem" data="{{btnText:'搜索',content:'哈哈哈5'}}"/>
+
+<template is="abc"/>
+<!-- 6.include 引入 -->
+<include src="/wxml/header.wxml"/>
+<include src="/wxml/footer.wxml"/>

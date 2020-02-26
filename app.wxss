@@ -1,0 +1,9 @@
+@import 'style/button.wxss';
+@import 'style/weui.wxss';
+.container{
+  color: green;
+  font-size: 35px;
+}
+.content{
+  background: orange;
+}
