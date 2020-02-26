@@ -1,0 +1,19 @@
+<!--Pages/view/view.wxml-->
+
+<!-- 1.view基本使用 -->
+<view class="box">哈哈哈</view>
+<view>呵呵呵</view>
+
+<!-- 2.hover-class -->
+<view class="box1" hover-class="hover-view">呵呵呵</view>
+
+<!-- 3.hover-stay-time -->
+<view class="box1" hover-class="hover-view" hover-stay-time="{{1000}}">呵呵呵</view>
+
+<!-- 4.hover-stay-time -->
+<view class="box1" hover-class="hover-view" hover-start-time="{{1000}}">呵呵呵</view>
+
+<!-- 5.hover-stop-propagation:阻止祖先元素点击态 -->
+<view class="box2" hover-class="box2-hover">
+  <view class="box1" hover-class="hover-view" hover-start-time="{{0}}" hover-stop-propagation>呵呵呵</view>
+</view>
