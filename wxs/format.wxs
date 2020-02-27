@@ -1,0 +1,20 @@
+//价格格式u啊
+function priceFormat(price,tofix){
+  var tofix = tofix || 2;
+
+  var f_price = parseFloat(price);
+
+  return f_price.toFixed(tofix)
+}
+
+//时间格式化
+function timeFormat(timestamp, format){
+  timestamp = parseFloat(timestamp * 1000);
+  var realDate = getDate(timestamp);
+  return realDate
+}
+
+module.exports = {
+  priceFormat : priceFormat,
+  timeFormat :timeFormat
+}
