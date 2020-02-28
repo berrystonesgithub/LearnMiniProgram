@@ -1,0 +1,25 @@
+/* components/my-tabbar/my-tabbar.wxss */
+
+.navBox {
+  width: 500rpx;
+  
+  margin: 0 auto;
+}
+
+.tabBox {
+  display: flex;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+  width: 120rpx;
+  font-size: 34rpx;
+}
+
+.tab-item.active {
+  color: #ff5770;
+  border-bottom: 10rpx solid #ff5770;
+}

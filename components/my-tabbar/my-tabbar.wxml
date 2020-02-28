@@ -1,0 +1,12 @@
+<!--components/my-tabbar/my-tabbar.wxml-->
+<view class="navBox">
+  <view class="tabBox">
+    <block wx:for="{{titles}}" wx:key="{{index}}">
+      <view class="tab-item {{curIndex === index? 'active':' ' }}" 
+            bind:tap="handleTabTap" 
+            data-index="{{index}}">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+</view>

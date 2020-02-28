@@ -1,0 +1,12 @@
+/* components/my-mulslot/my-mulslot.wxss */
+.slot1{
+  background: red;
+}
+
+.slot2{
+  background: orange;
+}
+
+.slot3{
+  background:  green;
+}
