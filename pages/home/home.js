@@ -1,66 +1,69 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  handleShowToast() {
+    wx.showToast({
+      title: '正在加载',
+      duration: 2000,
+      icon: 'loading',
+      mask: true,
+      success: function() {
+        console.log('展示弹窗成功')
+      },
+      fail: function() {
+        console.log('展示弹窗失败')
+      },
+      complete: function() {
+        console.log('完成函数的调用')
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleShowModal() {
+    wx.showModal({
+      title: '我是开头',
+      content: '我是内容',
+      success: function(res) {
+        console.log(res);
+        if (res.cancel) {
+          console.log('用户点击了取消');
+        }
+        if (res.confirm) {
+          console.log('用户点击了确定');
+        }
+      },
+      cancelText: '退出',
+      cancelColor: '#ff0755'
+      // showCancel: false
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleShowLoading() {
+    wx.showLoading({
+      title: '加载ing',
+      mask: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+    setTimeout(() => {
+      wx.hideLoading();
+    }, 1000)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleShowAction() {
+    wx.showActionSheet({
+      itemList: ['相册', '拍照', '转发'],
+      itemColor: '',
+      success: function(res) {
+        console.log(res);
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function(options) {
+    return {
+      title: '你好，转发',
+      path: '/pages/about/about',
+      imageUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582993255128&di=213ed37792851cdd0f015d731e0e9e01&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw631h453%2F20180302%2Fc0d5-fwnpcnt0541937.jpg'
+      //图片地址，可以是网络地址，默认为首页截图
+    }
   }
 })
