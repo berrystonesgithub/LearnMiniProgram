@@ -1,3 +1,9 @@
 <!--pages/home/home.wxml-->
 <!-- 1.展示轮播图 -->
-<w-swiper list="{{banners}}"/>
+<w-swiper list="{{banners}}" bannerclass='homeBanner'/>
+
+<!-- 2.展示推荐数据 -->
+<w-recommend recommends ="{{recommends}}"/>
+
+<!-- 3.本周流行展示 -->
+
