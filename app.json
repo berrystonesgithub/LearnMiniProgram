@@ -10,26 +10,26 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "/assests/tabbar1/home.png",
-        "selectedIconPath": "/assests/tabbar1/home_active.png"
+        "iconPath": "assests/tabbar1/home.png",
+        "selectedIconPath": "assests/tabbar1/home_active.png"
       },
       {
         "pagePath": "pages/category/category",
         "text": "首页",
-        "iconPath": "/assests/tabbar1/category.png",
-        "selectedIconPath": "/assests/tabbar1/category_active.png"
+        "iconPath": "assests/tabbar1/category.png",
+        "selectedIconPath": "assests/tabbar1/category_active.png"
       },
       {
         "pagePath": "pages/cart/cart",
         "text": "首页",
-        "iconPath": "/assests/tabbar1/cart.png",
-        "selectedIconPath": "/assests/tabbar1/cart_active.png"
+        "iconPath": "assests/tabbar1/cart.png",
+        "selectedIconPath": "assests/tabbar1/cart_active.png"
       },
       {
         "pagePath": "pages/profile/profile",
         "text": "首页",
-        "iconPath": "/assests/tabbar1/profile.png",
-        "selectedIconPath": "/assests/tabbar1/profile_active.png"
+        "iconPath": "assests/tabbar1/profile.png",
+        "selectedIconPath": "assests/tabbar1/profile_active.png"
       }
     ],
     "selectedColor": "#ff5777"
