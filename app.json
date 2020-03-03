@@ -15,19 +15,19 @@
       },
       {
         "pagePath": "pages/category/category",
-        "text": "首页",
+        "text": "分类",
         "iconPath": "assests/tabbar1/category.png",
         "selectedIconPath": "assests/tabbar1/category_active.png"
       },
       {
         "pagePath": "pages/cart/cart",
-        "text": "首页",
+        "text": "购物车",
         "iconPath": "assests/tabbar1/cart.png",
         "selectedIconPath": "assests/tabbar1/cart_active.png"
       },
       {
         "pagePath": "pages/profile/profile",
-        "text": "首页",
+        "text": "我的",
         "iconPath": "assests/tabbar1/profile.png",
         "selectedIconPath": "assests/tabbar1/profile_active.png"
       }
@@ -37,5 +37,6 @@
   "window": {
     "navigationBarBackgroundColor": "#ff5777",
     "navigationBarTextStyle": "white"
-  }
+  },
+  "sitemapLocation": "sitemap90.json"
 }

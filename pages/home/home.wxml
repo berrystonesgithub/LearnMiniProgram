@@ -1,9 +1,23 @@
 <!--pages/home/home.wxml-->
 <!-- 1.展示轮播图 -->
-<w-swiper list="{{banners}}" bannerclass='homeBanner'/>
+<w-swiper list="{{banners}}" bannerclass='homeBanner' />
 
 <!-- 2.展示推荐数据 -->
-<w-recommend recommends ="{{recommends}}"/>
+<w-recommend recommends="{{recommends}}" bind:imgLoad="handleImgLoad" />
 
 <!-- 3.本周流行展示 -->
+<!-- 找不到图，不做了 -->
 
+<!-- 4.tab-control -->
+<w-tab-control id="tab-control" class='{{isTabFixed? "fixed":""}}' titles="{{tabTitles}}" bind:tabTap="handleTabTap" />
+<w-tab-control titles="{{tabTitles}}" wx:if="{{isTabFixed}}"/>
+
+
+<!-- 5.展示商品数据 -->
+<w-goods goods="{{goods[curType].list}}" />
+
+<!-- 6.上拉加载更多 -->
+
+<!-- 7.回到顶部 -->
+<!-- hidden：对于自定义组件无效 -->
+<w-back-top wx:if="{{showBackTop}}" />
